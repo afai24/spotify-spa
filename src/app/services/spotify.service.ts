@@ -11,11 +11,11 @@ export class SpotifyService {
   constructor( private http: HttpClient ) {
     console.log('spotify service listo');
    }
-
+   // token authorization spotify
    getQuery( query: string ) {
      const url = `https://api.spotify.com/v1/${query}`;
      const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQCqz1RUfBLlt05iC8lPuZoeBgi3RThOoaeNCqoc7WTHJgbozx5vlxd8yHjg-9KOWvdAQNx-OSU_2Zlh-hs'
+      'Authorization': 'Bearer BQC8wZOOrV_XP_9TGsTt6mRvbI8-sPVbuWm1GDouskZWrrkpEGaq96WLb20VnFkobtJAsQ3l5yZhKMXhkSA'
     });
 
     return this.http.get(url, { headers });
@@ -42,7 +42,22 @@ export class SpotifyService {
    }
 
    getTopTracks(id: string) {
-    return this.getQuery(`artists/${ id }/top-tracks?country=us`)
+    return this.getQuery(`artists/${ id }/top-tracks?country=es`)
        .pipe( map( data => data['tracks'] ));
    }
+
+   getUser() {
+     return this.getQuery(`users/afai24`);
+    /* .pipe(map( data => {
+        console.log(data);
+     }));*/
+   }
+
+   getUserPlaylist() {
+    return this.getQuery(`me/playlists`)
+    .pipe(map( data => {
+       console.log(data);
+    }));
+  }
+
 }

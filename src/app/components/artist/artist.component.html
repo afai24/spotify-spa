@@ -11,20 +11,21 @@
             <a [href]="artist.external_urls.spotify" target="_blank">Artist Page</a>
         </p>
     </div>
-
     <div class="col-10 text-right m-5">
         <button routerLink="/search" routerLinkActive="router-link-active" class="btn btn-outline-danger">Take me Back</button>
     </div>
 </div>
 <div class="row">
     <div class="col">
+        <h2>Artist Top Tracks</h2>
         <table class="table">
+
             <thead>
                 <tr>
                     <th>photo</th>
                     <th>album</th>
-                    <th>cancion</th>
-                    <th>vista previa</th>
+                    <th>Song</th>
+                    <th>play</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,7 +35,7 @@
                     <td>{{ track.name }}</td>
                     <td>
                         <!--<audio [src]="track.preview_url" controls></audio>-->
-                        <iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <iframe [src]="track.uri | domseguro " width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </td>
                 </tr>
             </tbody>
