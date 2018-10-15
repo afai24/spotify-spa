@@ -1,3 +1,16 @@
-<p>
-    Coming Soon!
-</p>
+<h2>user playlists</h2>
+
+<div class="card-columns m-5">
+    <div class="card puntero" *ngFor="let item of items">
+        <div class="card-img-top">
+            <img class="img0" [src]="item.images | noimage">
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title">{{ item.name }}</h5>
+            <p class="card-text">
+                <span class="badge badge-pill badge-primary"></span>
+            </p>
+        </div>
+    </div>
+</div>

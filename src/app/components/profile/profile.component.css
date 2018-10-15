@@ -35,3 +35,14 @@
     line-height: 2;
     color: #888;
 }
+
+.img-fluid {
+    max-height: 15em;
+    max-width: 15em;
+}
+
+.linkprofile {
+    position: absolute;
+    top: 16em;
+    left: 6em;
+}

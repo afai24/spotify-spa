@@ -6,9 +6,11 @@
     <p class="lead text-dark">Developed using Angular 6 and Bootstrap</p>
     <hr class="my-4 text-dark">
     <p class="text-danger">Don't forget that you must do a post request to the spotify API to obtain your access_token, you must paste it in the spotify.service.ts query.
+        <br> by the moment it is also required to write your spotify username in getUser() and getUserPlaylist() on spotify.service.ts
         <br> implementation of server to obtain the access_token comming soon.
     </p>
     <a class="btn btn-primary btn-lg" href="https://developer.spotify.com/" target="blank" role="button">Learn more</a>
 </div>
+<h2>Last releases</h2>
 <app-loading *ngIf="loading"></app-loading>
 <app-cards [items]="newSongs"></app-cards>

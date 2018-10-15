@@ -8,13 +8,15 @@ import { SpotifyService } from '../../services/spotify.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
+  userdata: any = {};
 
   constructor( private spotify: SpotifyService ) {
-    let name;
     this.spotify.getUser()
     .subscribe((data: any) => {
       console.log(data);
-      name = data['display_name'];
+      console.log(name);
+      this.userdata = data;
+      console.log(this.userdata);
     });
   }
 

@@ -1,16 +1,10 @@
 <div class="row md-5 about">
     <div class="col-lg-4 col-md-4 col-sm-12">
-        <img src="" class="img-fluid">
-        <span class="text-justify">profile img</span>
+        <img [src]=" userdata.images[0].url" class="img-fluid">
+        <a class="linkprofile" [href]=" userdata.external_urls['spotify']" target="blank">user profile</a>
     </div>
     <div class="col-lg-8 col-md-8 col-sm-12 desc">
-        <h2>coming soon</h2>
-        <h3>name</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget posuere augue, et commodo tortor. Nam in dictum nunc, eget varius mauris. Sed vitae viverra velit. Donec facilisis sollicitudin sem ac euismod. Mauris ultrices, lacus at egestas imperdiet,
-            mauris purus imperdiet turpis, a rhoncus justo nisi non sapien. Donec blandit massa in laoreet eleifend. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis mattis blandit sollicitudin. Nam sagittis
-            id felis eu pulvinar. In hac habitasse platea dictumst. Phasellus fringilla sed orci id mollis. Vivamus velit nulla, congue sit amet eros eu, commodo lobortis ante. Vivamus ac ex ac magna viverra mattis. Duis lobortis elit lacus, sed tempor
-            augue euismod sed. Sed gravida accumsan dui, non pellentesque leo ultricies vel. Cras lorem massa, pulvinar nec cursus ac, tempus eget magna.
-        </p>
+        <h3>{{ userdata.display_name }}</h3>
+        <span class="badge badge-pill badge-light">followers: {{ userdata.followers['total']}}</span>
     </div>
 </div>

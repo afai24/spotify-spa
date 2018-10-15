@@ -15,7 +15,7 @@ export class SpotifyService {
    getQuery( query: string ) {
      const url = `https://api.spotify.com/v1/${query}`;
      const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQC8wZOOrV_XP_9TGsTt6mRvbI8-sPVbuWm1GDouskZWrrkpEGaq96WLb20VnFkobtJAsQ3l5yZhKMXhkSA'
+      'Authorization': 'Bearer BQDs7DzqRficw2GtI4GjYgQlteSfnd-ScBMmv-HtbPaBbq65_sFnWj2fILdWh2qAY-aT8dbsVLuOgV7s3Ko'
     });
 
     return this.http.get(url, { headers });
@@ -46,18 +46,13 @@ export class SpotifyService {
        .pipe( map( data => data['tracks'] ));
    }
 
+   // spotify user required, in this case i use my spotify user: afai24
    getUser() {
      return this.getQuery(`users/afai24`);
-    /* .pipe(map( data => {
-        console.log(data);
-     }));*/
    }
 
    getUserPlaylist() {
-    return this.getQuery(`me/playlists`)
-    .pipe(map( data => {
-       console.log(data);
-    }));
+    return this.getQuery(`users/afai24/playlists?offset=0&limit=20`);
   }
 
 }
